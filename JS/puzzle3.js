@@ -31,7 +31,6 @@ function iniciarPuzzle() {
         tile.addEventListener("drop", drop);
 
         grid.appendChild(tile);
-        verificarVictoria();
         pieces.push(pos);
     });
 }
@@ -47,6 +46,7 @@ function dragOver(e) {
 }
 
 function drop(e) {
+    e.preventDefault();
     const targetIndex = e.target.dataset.index;
     if (draggedIndex === null || draggedIndex === targetIndex) return;
 
@@ -113,23 +113,24 @@ function irAlSiguiente() {
 }
 
 
-function verificarVictoria() {
+
+function verificarPuzzle() {
     const tiles = document.querySelectorAll(".tile");
-    let victoria = true;
-    tiles.forEach((tile, i) => {
-        if (parseInt(tile.dataset.index) !== i) {
-            victoria = false;
+    let correcto = true;
+
+    tiles.forEach((tile, index) => {
+        if (parseInt(tile.dataset.correct) !== index) {
+            correcto = false;
         }
     });
 
-    if (victoria) {
-        document.getElementById("grid").style.display = "none";
-        const img = document.createElement("img");
-        img.src = "IMG/foto3.jpg"; // Se actualizará dinámicamente abajo
-        img.id = "imagen-completa";
-        document.querySelector(".container").appendChild(img);
+    if (correcto) {
+        tiles.forEach(tile => {
+            tile.classList.add("completo");
+        });
         setTimeout(() => {
-            img.style.display = "block";
-        }, 100);
+            alert("¡Muy bien mi niña! Completaste este recuerdo ❤️");
+            window.location.href = "final.html";
+        }, 1200);
     }
 }
