@@ -31,6 +31,7 @@ function iniciarPuzzle() {
         tile.addEventListener("drop", drop);
 
         grid.appendChild(tile);
+        verificarVictoria();
         pieces.push(pos);
     });
 }
@@ -109,4 +110,26 @@ function lanzarConfeti() {
 
 function irAlSiguiente() {
     window.location.href = "puzzle3.html";
+}
+
+
+function verificarVictoria() {
+    const tiles = document.querySelectorAll(".tile");
+    let victoria = true;
+    tiles.forEach((tile, i) => {
+        if (parseInt(tile.dataset.index) !== i) {
+            victoria = false;
+        }
+    });
+
+    if (victoria) {
+        document.getElementById("grid").style.display = "none";
+        const img = document.createElement("img");
+        img.src = "IMG/foto2.jpg"; // Se actualizará dinámicamente abajo
+        img.id = "imagen-completa";
+        document.querySelector(".container").appendChild(img);
+        setTimeout(() => {
+            img.style.display = "block";
+        }, 100);
+    }
 }

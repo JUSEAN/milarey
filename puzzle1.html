@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <div class="d1" id="mensaje">
-            <h1 id="titulo">RECUERDO #1</h1>
-            <p id="parrafo">
+        <div class="d1" data-aos="fade-up" id="mensaje">
+            <h1 data-aos="zoom-in" id="titulo">RECUERDO #1</h1>
+            <p data-aos="fade-in" id="parrafo">
                 "Aww, desbloqueaste el primer recuerdo... ¡Qué bien, mi niña! Todavía me acuerdo de esa noche tan linda en la que nos levantamos a medianoche solo para comer piña, jajaja."
             </p>
             <div class="botones">
@@ -34,5 +35,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="JS/puzzle1.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
 </body>
 </html>
