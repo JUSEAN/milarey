@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz cumpleaños mi princesita</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="d1" id="mensaje">
+            <h1 id="titulo">RECUERDO #3</h1>
+            <p id="parrafo">
+                "Uff… Lo haces tan bien. ¿Cómo podría olvidar esa segunda vez que nos volvimos a ver? ¿Cómo podría olvidar nuestro primer beso… o cuando momento te pedí que fueras mi novia?"
+            </p>
+            <div class="botones">
+                <button onclick="mostrarPuzzle()">Siguiente ➡️</button>
+            </div>
+        </div>
+
+        <div class="puzzle-container" id="puzzle" style="display: none;">
+            <h2>Arma la imagen 🎁</h2>
+            <div class="grid" id="grid"></div>
+
+            <div id="felicitacion" style="display: none;">
+                <p>🎉 ¡Lo lograste, mi niña. Desbloqueaste el cuarto recuerdo! 🎉</p>
+                <button onclick="irAlSiguiente()">Siguiente recuerdo 👉</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="JS/puzzle3.js"></script>
+</body>
+</html>
