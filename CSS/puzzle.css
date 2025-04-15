@@ -128,42 +128,23 @@ body {
   }
   
 
+/* Responsive para móviles */
 @media (max-width: 600px) {
-    .botones-puzzle {
-        flex-direction: column !important;
-        align-items: center;
-        gap: 10px;
-        padding: 10px;
-    }
+  #mensaje {
+    font-size: 1.1rem;
+    padding: 10px;
+  }
 
-    .botones-puzzle button {
-        width: 80%;
-        font-size: 1.2em;
-    }
-}
+  .puzzle-container {
+    transform: scale(0.8);
+    margin-top: 20px;
+  }
 
-
-/* Adaptabilidad vertical */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main, .contenido-principal, #puzzle-container {
-    flex: 1 0 auto;
-    overflow-y: auto;
-}
-
-/* Asegura que los textos e instrucciones no se corten */
-#mensaje, #instrucciones {
-    padding: 1em;
-    text-align: center;
+  .boton-puzzle, .boton-reiniciar, .boton-volver {
+    font-size: 1rem !important;
+    padding: 10px 15px !important;
+    margin: 10px auto !important;
+    display: block !important;
+    position: static !important;
+  }
 }
