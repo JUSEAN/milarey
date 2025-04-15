@@ -1,37 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feliz cumpleaños mi princesita</title>
-    <link rel="stylesheet" href="CSS/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puzzle</title>
+  <link rel="stylesheet" href="CSS/puzzle.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="d1" id="mensaje">
-            <h1 id="titulo">RECUERDO #2</h1>
-            <p id="parrafo">
-                "¡Muy bien, mi amor! ¿Te acuerdas de la primera vez que nos volvimos a ver? Fue tan especial verte de nuevo, ver lo mucho que habíamos crecido… Desde ese momento, al mirar otra vez esos ojitos cafecitos, supe que me había enamorado completamente de ti."
-            <div class="botones">
-                <button onclick="mostrarPuzzle()">Siguiente ➡️</button>
-            </div>
-        </div>
 
-        <div class="puzzle-container" id="puzzle" style="display: none;">
-            <h2>Arma la imagen 🎁</h2>
-            <div class="grid" id="grid"></div>
+  <!-- Emojis decorativos flotantes -->
+  <div class="background-decor">🎀</div>
+  <div class="background-decor">💖</div>
+  <div class="background-decor">✨</div>
+  <div class="background-decor">🌸</div>
+  <div class="background-decor">💝</div>
+  <div class="background-decor">🌷</div>
+  <div class="background-decor">💕</div>
 
-            <div id="felicitacion" style="display: none;">
-                <p>🎉 ¡Lo lograste, mi niña. Desbloqueaste el tercer recuerdo! 🎉</p>
-                <button onclick="irAlSiguiente()">Siguiente recuerdo 👉</button>
-            </div>
-        </div>
-    </div>
+  <!-- Texto antes del puzzle -->
+  <div id="mensaje">
+    <h1>¡Vamos a armar el puzzle!</h1>
+    <p>Arrastra las piezas y colócalas en su lugar para completar la imagen.</p>
+  </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-    <script src="JS/puzzle2.js"></script>
+  <!-- Texto encima del puzzle -->
+  <div id="instrucciones">
+    <h2>Arma este recuerdo</h2>
+  </div>
+
+  <div id="puzzle" style="display: none;">
+    <div id="grid" style="display: grid; grid-template-columns: repeat(3, 100px); grid-template-rows: repeat(3, 100px); gap: 2px;"></div>
+  </div>
+
+  <!-- Texto de felicitaciones y botón -->
+  <div id="felicitacion" style="display: none;">
+    <h2>"¡Muy bien, mi amor! ¿Te acuerdas de la primera vez que nos volvimos a ver? Fue tan especial verte de nuevo, ver lo mucho que habíamos crecido… Desde ese momento, al mirar otra vez esos ojitos cafecitos, supe que me había enamorado completamente de ti."</h2>
+    <button onclick="irAlSiguiente()">Ir al siguiente nivel</button>
+  </div>
+
+  <audio id="background-music" autoplay loop>
+    <source src="MUSIC/song3.mp3" type="audio/mp3">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+   <!-- Reproductor de música de fondo -->
+   <audio id="musicaFondo" autoplay loop>
+    <source src="MUSIC/song3.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+
+  <script>
+    document.addEventListener("click", () => {
+      const audio = document.getElementById("musicaFondo");
+      if (audio.paused) {
+        audio.play();
+      }
+    }, { once: true });
+  </script>
+
+
+  <script src="JS/puzzle2.js"></script>
 </body>
 </html>

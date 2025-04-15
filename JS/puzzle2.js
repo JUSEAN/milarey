@@ -12,12 +12,12 @@ function iniciarPuzzle() {
     pieces = [];
 
     const posiciones = [...Array(9).keys()];
-    posiciones.sort(() => Math.random() - 0.5);
+    posiciones.sort(() => Math.random() - 0.5); // Desordenamos las posiciones
 
     posiciones.forEach((pos, i) => {
         const tile = document.createElement("div");
         tile.classList.add("tile");
-        tile.style.backgroundImage = "url('IMG/foto2.jpg')";
+        tile.style.backgroundImage = "url('IMG/foto2.jpeg')";
         const x = (pos % 3) * -100;
         const y = Math.floor(pos / 3) * -100;
         tile.style.backgroundPosition = `${x}px ${y}px`;
@@ -71,7 +71,7 @@ function actualizarGrid() {
     for (let i = 0; i < 9; i++) {
         const tile = tiles[i];
         const val = pieces[i];
-        tile.style.backgroundImage = "url('IMG/foto2.jpg')";
+        tile.style.backgroundImage = "url('IMG/foto2.jpeg')";
         const x = (val % 3) * -100;
         const y = Math.floor(val / 3) * -100;
         tile.style.backgroundPosition = `${x}px ${y}px`;
@@ -109,10 +109,8 @@ function lanzarConfeti() {
 }
 
 function irAlSiguiente() {
-    window.location.href = "puzzle3.html";
+    window.location.href = "puzzle3.html"; // Aquí vas a la página final
 }
-
-
 
 function verificarPuzzle() {
     const tiles = document.querySelectorAll(".tile");
@@ -130,7 +128,9 @@ function verificarPuzzle() {
         });
         setTimeout(() => {
             alert("¡Muy bien mi niña! Completaste este recuerdo ❤️");
-            window.location.href = "puzzle3.html";
+            window.location.href = "puzzle2.html";
         }, 1200);
     }
 }
+
+document.addEventListener("DOMContentLoaded", mostrarPuzzle);
